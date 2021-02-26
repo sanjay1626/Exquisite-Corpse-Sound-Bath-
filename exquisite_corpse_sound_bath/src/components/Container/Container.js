@@ -1,14 +1,16 @@
 import Container from 'react-bootstrap/Container'
-import "./style.css";
+import Image from 'react-bootstrap/Image'
 import PropTypes from 'prop-types'
+import "./style.css";
 
 
-const Container = () => {
+const Containers = () => {
+  
     return (
-        <div>
-            
-        </div>
+        <>
+            <Image className="image" src = "https://familyaudiologyonline.com/wp-content/uploads/2018/02/Musicians-and-the-Prevention-of-Hearing-Loss-1-700x330.jpg" />
+        </>
     )
 }
 
-export default Container
+export default Containers
