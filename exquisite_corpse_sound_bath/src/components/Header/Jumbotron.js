@@ -5,10 +5,18 @@ import Jumbotron from 'react-bootstrap/Jumbotron'
 import Button from 'react-bootstrap/Button'
 
 
+
 const Header = ({title,instructions}) => {
     const headingStyle = {
         color: 'Black',
-    }
+    };
+ 
+    const onClick = () =>{
+      
+      console.log('Click')
+      
+    };
+
 
     return (
 <Jumbotron className = "Jumbotron" style={headingStyle}>
@@ -18,7 +26,7 @@ const Header = ({title,instructions}) => {
     {instructions}
   </p>
   <p>
-    <Button variant="secondary">Let's Get Started</Button>
+    <Button onClick ={onClick} variant="secondary">Let's Get Started</Button>
   </p>
 </Jumbotron>
   

@@ -1,12 +1,11 @@
-import Header from "./components/Header/Jumbotron"
-import Container from "./components/Container/Container"
-import './App.css';
 
+
+import './App.css';
+import Main from './components/Main/Main'
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <Container />
+     <Main/>
     </div>
   );
 }
