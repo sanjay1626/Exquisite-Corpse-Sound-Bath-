@@ -1,5 +1,5 @@
 import React from 'react'
-
+import HomePage from '../HomePage/HomePage'
 import Dashboard from '../Dashboard/Dashboard'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from '../Pages/SignIn/SignIn'
@@ -11,7 +11,9 @@ const Main=() => {
        
         <BrowserRouter>
         <Switch>
-            
+            <Route path = '/exquisite'>
+                <HomePage/>
+            </Route>
             <Route path = '/Dashboard'>
                 <Dashboard/>
             </Route>
