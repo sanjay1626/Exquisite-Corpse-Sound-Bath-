@@ -1,6 +1,5 @@
 import "./style.css";
 import PropTypes from 'prop-types'
-import Image from 'react-bootstrap/Image'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Button from 'react-bootstrap/Button'
 
@@ -11,11 +10,12 @@ const Header = ({title,instructions}) => {
         color: 'Black',
     };
  
-    const onClick = () =>{
-      
-      console.log('Click')
-      
-    };
+const onClick =() =>{
+  console.log("Clicked")
+     
+   
+
+}
 
 
     return (
@@ -26,7 +26,7 @@ const Header = ({title,instructions}) => {
     {instructions}
   </p>
   <p>
-    <Button onClick ={onClick} variant="secondary">Let's Get Started</Button>
+    <Button onClick ={onClick} variant="secondary">Let's Login</Button>
   </p>
 </Jumbotron>
   

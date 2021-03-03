@@ -1,14 +1,31 @@
 import React from 'react'
-import Header from "../Header/Jumbotron"
 
-import Container from '../Container/Container'
+import Dashboard from '../Dashboard/Dashboard'
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Login from '../Pages/SignIn/SignIn'
+
 const Main=() => {
     return (
-        <div className="Main">
-        <Header/>
-        <Container/>
-      </div>
-    )
+        <div className ="wrapper">
+  
+       
+        <BrowserRouter>
+        <Switch>
+            
+            <Route path = '/Dashboard'>
+                <Dashboard/>
+            </Route>
+
+            <Route path = '/login'>
+                <Login/>
+            </Route>
+               
+        </Switch>
+        </BrowserRouter>
+
+        </div>
+    
+    );
 }
 
 export default Main
