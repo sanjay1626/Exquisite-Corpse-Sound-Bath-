@@ -1,6 +1,6 @@
-import Container from 'react-bootstrap/Container'
+
 import Image from 'react-bootstrap/Image'
-import PropTypes from 'prop-types'
+
 import "./style.css";
 
 
