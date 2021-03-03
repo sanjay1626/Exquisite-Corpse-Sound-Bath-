@@ -1,32 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import HomePage from '../HomePage/HomePage'
 import Dashboard from '../Dashboard/Dashboard'
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch,Link } from 'react-router-dom';
 import Login from '../Pages/SignIn/SignIn'
-
+import Button from 'react-bootstrap/Button'
 const Main=() => {
+      
     return (
-        <div className ="wrapper">
-  
-       
+      <div className="wrapper">
         <BrowserRouter>
-        <Switch>
-            <Route path = '/exquisite'>
-                <HomePage/>
-            </Route>
-            <Route path = '/Dashboard'>
-                <Dashboard/>
-            </Route>
+          
 
-            <Route path = '/login'>
-                <Login/>
+          <Switch>
+            <Route path="/home">
+              <HomePage />
             </Route>
-               
-        </Switch>
+            <Route path="/dashboard">
+              <Dashboard />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+          </Switch>
         </BrowserRouter>
 
-        </div>
-    
+      </div>
     );
 }
 
