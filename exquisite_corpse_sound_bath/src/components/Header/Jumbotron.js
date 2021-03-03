@@ -2,20 +2,14 @@ import "./style.css";
 import PropTypes from 'prop-types'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Button from 'react-bootstrap/Button'
-
-
-
+import { BrowserRouter, Route, Switch,Link } from 'react-router-dom';
+import Main from '../Main/Main'
+import Login from '../Pages/SignIn/SignIn'
 const Header = ({title,instructions}) => {
     const headingStyle = {
         color: 'Black',
     };
  
-const onClick =() =>{
-  console.log("Clicked")
-     
-   
-
-}
 
 
     return (
@@ -26,7 +20,10 @@ const onClick =() =>{
     {instructions}
   </p>
   <p>
-    <Button onClick ={onClick} variant="secondary">Let's Login</Button>
+  <Button><Link to="/login">Let's Get Started!</Link></Button>
+
+   
+   
   </p>
 </Jumbotron>
   
