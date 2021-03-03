@@ -20,7 +20,7 @@ const Header = ({title,instructions}) => {
     {instructions}
   </p>
   <p>
-  <Button><Link to="/login">Let's Get Started!</Link></Button>
+  <Link to="/login"><button className = "btn btn-dark" type="button">Let's Get Started!</button></Link>
 
    
    
