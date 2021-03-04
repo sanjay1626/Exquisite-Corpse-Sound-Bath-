@@ -4,7 +4,7 @@ import Container from "../Container/Container"
 
 export default function HomePage() {
     return(
-     <div>
+     <div id="homepage">
             <Header/>
           <Container/>
      </div>
