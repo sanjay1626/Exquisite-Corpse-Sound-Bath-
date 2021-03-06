@@ -14,7 +14,7 @@ const Header = ({title,instructions}) => {
  
     return (
       <div>
-          <Jumbotron className = "Jumbotron" style={headingStyle}>
+          <Jumbotron className = "Jumbotron" id="Jumbo" style={headingStyle}>
 
       <h1>{title}</h1>
       <p>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, Component } from 'react'
 import HomePage from '../HomePage/HomePage'
 import Dashboard from '../Dashboard/Dashboard'
 // import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -10,47 +10,58 @@ import Wrapper from '../Wrapper/index'
 import { BrowserRouter, Route, Switch,Link } from 'react-router-dom';
 import Routes from '../Routes/index'
 import Container from "../Container/Container"
-
+import axios from "axios";
 // import { Link, animateScroll as scroll } from "react-scroll";
 const Main=() => {
     
 const Home =()=> <HomePage/>
 const SignIn =()=> <Login/>
-const CDashboard=()=>Dashboard
-    return (
-     
-      <div className="main">
-        <Jumbotron className="Jumbotron">
-          <h1>Exquisite Corpse Sound Bath</h1>
-          <p>Record your sound & mix your music or listen to your favorite music</p>
+const CDashboard=()=> <Dashboard/>
 
-        
-      <BrowserRouter>
+const disappear = () => {
+  document.getElementById("button").style.display = "none";
+};
 
-   
-   
-    <Link to="/login"
-      activeClass="active"
-      spy={true}
-      smooth={true}
-      offset={-70}
-      duration={500}
-
-        ><button  className = "btn btn-dark" type="button">Let's Get Started!</button></Link>
-      
-      <Switch>
-     
-        <Route path ="/home" component={Home}/>
-        <Route path ="/login" component={SignIn}/>
-      </Switch>
+const[token,setToken]= useState();
+if(!token){
+  return<Login setToken={setToken}/>
+}
+return (
+  <div className="wrapper">
     
-  </BrowserRouter>
-  </Jumbotron>
-  <Container/>
+    <BrowserRouter>
       
-            
-      </div>
-    );
+      <Jumbotron className="Jumbotron" id="jumber">
+        <h1>Exquisite Corpse Sound Bath</h1>
+        <p>
+          "Record your sound & mix your music or listen to your favorite music"
+        </p>
+        <Link
+          to="/dashboard"
+          activeClass="active"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+        >
+          <button
+            onClick={disappear}
+            id="button"
+            className="btn btn-dark"
+            type="button"
+          >
+            Let's Get Started!
+          </button>
+        </Link>
+      </Jumbotron>
+      <Switch>
+       
+        <Route id="login" path="/login" component={SignIn} />
+        <Route id="dashboard" path="/dashboard" component={CDashboard} />
+      </Switch>
+    </BrowserRouter>
+  </div>
+);
 }
 
 export default Main
