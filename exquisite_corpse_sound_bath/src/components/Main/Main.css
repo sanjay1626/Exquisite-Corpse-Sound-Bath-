@@ -1,3 +1,20 @@
 .wrapper {
   padding: 20px;
 }
+.Jumbotron {
+  background-image: url("https://cdn.dribbble.com/users/721524/screenshots/4247264/speakers.png?compress=1&resize=800x300");
+  opacity: 65%;
+}
+h1,
+p {
+  font-family: "Fira Sans", sans-serif;
+}
+.btn {
+  color: blanchedalmond;
+  background-color: blueviolet;
+  text-decoration: none;
+  outline: 0;
+}
+html {
+  background-color: rgb(150, 233, 233);
+}
