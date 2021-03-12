@@ -1,0 +1,43 @@
+{
+  "name": "exquisite-corpse-sound-bath-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "proxy": "http://localhost:3001/",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "history": "^4.10.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.1.3",
+    "react-router-dom": "^5.1.2",
+    "redux": "^4.0.4",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "html-webpack-plugin": "^3.2.0",
+    "path": "^0.12.7",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanjay1626/Exquisite-Corpse-Sound-Bath-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sanjay1626/Exquisite-Corpse-Sound-Bath-/issues"
+  },
+  "homepage": "https://github.com/sanjay1626/Exquisite-Corpse-Sound-Bath-#readme"
+}
