@@ -11,7 +11,10 @@
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.4",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "video.js": "^7.11.4",
+    "videojs-record": "^4.3.0",
+    "videojs-wavesurfer": "^3.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
