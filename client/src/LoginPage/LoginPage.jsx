@@ -3,7 +3,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { ReactMic } from "react-mic";
+
 import { userActions } from '../_actions';
 
 class LoginPage extends React.Component {
@@ -80,19 +80,19 @@ class LoginPage extends React.Component {
                         <Link to="/register" className="btn btn-link">Register</Link>
                     </div>
                 </form>
-                <hero className="col-md-12">
-        <h1 style={{display:'block',
-                    color:'yellowgrey',
-                   textAlign:'center',
-                   fontSize:'30px',
-                   animationName:pulse,
-                   animationDuration:1.5,
-                   
-                   }}>Exquisite Sound<hr/>
-        <img style={{alignContent:'center'
-                    }}src="https://i.pinimg.com/originals/d8/57/9c/d8579c08b29021bf3ffc4425b0718cf0.jpg" className="img-circle"></img>
-        </h1>
-       </hero>
+                {/* <hero className="col-md-12"> */}
+        {/* <h1 style={{display:'block', */}
+                    {/* // color:'yellowgrey', */}
+                {/* //    textAlign:'center', */}
+                {/* //    fontSize:'30px', */}
+                {/* //    animationName:pulse, */}
+                {/* //    animationDuration:1.5, */}
+                   {/*  */}
+                {/* //    }}>Exquisite Sound<hr/> */}
+        {/* <img style={{alignContent:'center' */}
+                    {/* // }}src="https://i.pinimg.com/originals/d8/57/9c/d8579c08b29021bf3ffc4425b0718cf0.jpg" className="img-circle"></img> */}
+        {/* </h1> */}
+       {/* </hero> */}
             </div>
             
         );
