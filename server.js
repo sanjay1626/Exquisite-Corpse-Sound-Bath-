@@ -1,15 +1,21 @@
-const express = require('express');
-const morgan = require('morgan');
-const cors = require('cors');
+const express = require('express')
+const bodyParser = require('body-parser')
+const cors = require('cors')
 
-const tracksRoutes = require('./routes/tracks.routes');
-const app = express();
+const db = require('./database')
 
-app.use(cors());
-app.use(morgan('dev'));
+const app = express()
+const apiPort = 3001
 
-// routes
-app.use(tracksRoutes);
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(cors())
+app.use(bodyParser.json())
 
-app.listen(3001);
+db.on('error', console.error.bind(console, 'MongoDB connection error:'))
+
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
+
+app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))
 console.log('Server on port', 3001);

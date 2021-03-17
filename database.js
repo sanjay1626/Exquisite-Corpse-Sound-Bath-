@@ -1,21 +1,14 @@
-const { MongoClient } = require('mongodb');
+const mongoose = require('mongoose');
 
 let db;
 
-MongoClient.connect('mongodb://localhost/soundDB', {
-    useUnifiedTopology: true
-}, (err, client) => {
-    if(err) {
-        console.log(err);
-        process.exit(0);
-    }
-    db = client.db('soundDB');
+mongoose.connect('mongodb://127.0.0.1:27017/sound', {
+    useNewUrlParser: true
+}). catch(e => {
+    console.error('Connection error', e.message)
+})
+    db = mongoose.connection
     console.log('Database is connected');
-});
-
-const getConnection = () => db;
 
 
-module.exports =  {
-    getConnection
-};
+module.exports = db;
