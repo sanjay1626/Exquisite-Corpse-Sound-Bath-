@@ -1,17 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Exquisite Corpse Sound Bath</title>
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <style>
         a { cursor: pointer; }
         .help-block { font-size: 12px; }
-        .jumbotron{background-color: black;
+        .jumbotron{background-color:transparent;
+                      
                  }
-        html{background-color: black;}
-        body{background-color: black;}
+        html{background-color: black;
+          background-image: url("https://wallup.net/wp-content/uploads/2015/12/118851-audio_spectrum-rainbows-abstract-748x468.jpg");
+          background-size: cover; 
+          background-position: center;}
+        body{background-color:transparent}
+        .searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: #353b48;
+    border-radius: 30px;
+    padding: 10px;
+    }
+
+    .search_input{
+    color: rgb(70, 68, 68);
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color:transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_input{
+    padding: 0 10px;
+    width: 450px;
+    caret-color:red;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_icon{
+    background: rgba(13, 95, 2, 0.678);
+    color: #e74c3c;
+    }
+
+    .search_icon{
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:rgb(34, 32, 32);
+    text-decoration:none;
+    border:none
+    }
   
 
     </style>
@@ -20,13 +72,13 @@
     <div id="app"></div>
 </body>
   <!-- credits -->
-  <div className="fixed-bottom" style="border-color: blanchedalmond;">
-    <h4 style="font-style: italic;
-                text-shadow: rgb(84, 84, 85);
-                background-color: black;
-                color:rgb(78, 78, 228);
-                text-align: center;
-               
-                ">@MonkeyBrains Inc </h4>
-</div>
+  <!-- <div className="fixed-bottom" style="border-color: blanchedalmond;"> -->
+    <!-- <h4 style="font-style: italic; -->
+                <!-- /* text-shadow: rgb(84, 84, 85); */ -->
+                <!-- /* background-color: black; */ -->
+                <!-- /* color:rgb(78, 78, 228); */ -->
+                <!-- /* text-align: center; */ -->
+               <!-- /*  */ -->
+                <!-- /* ">@MonkeyBrains Inc </h4> */ -->
+<!-- </div> -->
 </html>

@@ -1,17 +1,15 @@
-const express = require('express')
-const mongoose = require('mongoose')
-const app = express()
+const express = require('express');
+const morgan = require('morgan');
+const cors = require('cors');
 
-//middleware receive info. from frontend in json format
-app.use(express.json())
+const tracksRoutes = require('./routes/tracks.routes');
+const app = express();
 
-mongoose.connect('mongodb+srv://sanjay1626:Stormer1626$@cluster0.bylwq.mongodb.net/exquisite-corpse-db?retryWrites=true&w=majority', {
-    useNewUrlParser: true,
-    
-})
+app.use(cors());
+app.use(morgan('dev'));
 
+// routes
+app.use(tracksRoutes);
 
-
-app.listen(3001, ()=>{
-    console.log("Server is Running 3001..")
-})
+app.listen(8080);
+console.log('Server on port', 8080);
