@@ -1,15 +1,20 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const mongoose = require('mongoose');
 
-const SoundTrack = new Schema (
+const Schema = mongoose.Schema;
+
+// Create new Schema.
+const soundSchema = new Schema (
     {
         username: { type: String, required: true },
         URL: { type: String, required: true },
-        category:{ type: String },
+        category: { type: String },
     },
-    { timestamps: true},
+    { timestamps: true}
 
-)
+);
 
 
-module.exports = mongoose.model('track', SoundTrack)
+// Store model in variable Sound.
+const Sound = mongoose.model('sound', soundSchema);
+
+module.exports = Sound;
