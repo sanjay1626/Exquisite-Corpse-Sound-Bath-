@@ -1,21 +1,19 @@
-const { MongoClient } = require('mongodb');
+const mongoose = require('mongoose');
 
 let db;
 
-MongoClient.connect('mongodb://localhost/soundDB', {
-    useUnifiedTopology: true
-}, (err, client) => {
-    if(err) {
-        console.log(err);
-        process.exit(0);
-    }
-    db = client.db('soundDB');
-    console.log('Database is connected');
-});
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/funkySound', {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+    
+}). catch(e => {
+    console.error('Connection error', e.message)
+})
 
-const getConnection = () => db;
+db = mongoose.connection
+console.log('Database is connected...');
 
 
-module.exports =  {
-    getConnection
-};
+module.exports = db;
