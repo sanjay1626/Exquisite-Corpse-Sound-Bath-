@@ -1,5 +1,4 @@
 import React from 'react';
-import "bootstrap"
 import * as Tone from 'tone';
 
 
@@ -28,32 +27,42 @@ const Player = () => {
     );
 }
 
+//universal variables
 let layer1, layer2, layer3, toggle;
 
 
 function createPlayer(e) {
     e.preventDefault();
+    //------------------------------------------TRANSPORT CODE ----------------------------------------//
     // toggle = Tone.Transport;
     // // set the transport
     // toggle.bpm.value = 108;
     // toggle.loop = true;
     // toggle.loopStart = "4m";
     // toggle.loopEnd = "8m";
+    //------------------------------------------TRANSPORT CODE ----------------------------------------//
 
 
     //Randomly grab 3 URLs from the database and use them in the players
     //temporary array to represent database for now
+    //==================CALL TO DB WILL GO HERE (replace the dbArray)======================//
     let dbArray = [
         "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1615663107/InkyBoisSound_r0gdgd.mp3",
         "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1616265722/autrfo5tdnhh35q0lh4l.wav",
-        "https://tonejs.github.io/audio/loop/hh.mp3"
+        "https://tonejs.github.io/audio/loop/hh.mp3",
+        "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1616280792/u8tmkzab5wqtexu55w1b.mp3",
+        "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1616280781/bhi2hfzboiuqg0parhhn.mp3",
+        "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1616280781/p7maieoemjvqj2byjuyx.mp3",
+        "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1616280784/p1ftjiiqnxcppjfmvsbb.mp3",
+        "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1616281248/itgbbwye7eckeqki7pln.mp3",
+        "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1616281249/s7wtlmgd3by2mbzmptyj.mp3"
     ]
 
-    //variables to hold sound URLS
+    //function variables to hold sound URLS
     let sound1, sound2, sound3;
 
     //need to know size of database
-    let dbSize = 3;
+    let dbSize = dbArray.length;
     //randonly pull three indexes from database
     //gnerate random number
     function generateIndexes() {
@@ -63,7 +72,7 @@ function createPlayer(e) {
         console.log("Sound indexes are: " + ind1 + ", " + ind2 + ", " + ind3)
         //check to make sure that you have 3 different indexes
 
-        if (ind1 != ind2&& ind1 != ind3 && ind2 != ind3) {
+        if (ind1 != ind2 && ind1 != ind3 && ind2 != ind3) {
             //use the resulting URLs to populate sound1, sound2, and sound3
             sound1 = dbArray[ind1];
             sound2 = dbArray[ind2];
