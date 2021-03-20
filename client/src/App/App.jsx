@@ -8,6 +8,8 @@ import { PrivateRoute } from '../_components';
 import { HomePage } from '../HomePage';
 import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
+// import { Record } from "../Sounds/Record/recorder";
+import Player from "../Sounds/Tracks/Player"
 
 class App extends React.Component {
     constructor(props) {
@@ -30,12 +32,14 @@ class App extends React.Component {
                         }
                         <Router history={history}>
                             <Switch>
-                                <PrivateRoute exact path="/" component={HomePage} />
+                                <Route path="/" component={Player} />
                                 <Route path="/login" component={LoginPage} />
                                 <Route path="/register" component={RegisterPage} />
+                                {/* <Route path="/player" component={Player} /> */}
                                 <Redirect from="*" to="/" />
                             </Switch>
                         </Router>
+                        
                     </div>
                 </div>
             </div>

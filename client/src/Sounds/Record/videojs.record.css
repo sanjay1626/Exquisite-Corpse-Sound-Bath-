@@ -155,7 +155,7 @@ Default styles for videojs-record 4.2.0
   -o-transition: all 0.4s;
   transition: all 0.4s;
   text-align: center;
-  vertical-align: middle;
+  /* vertical-align: middle; */
   /* border-radius */
   -webkit-border-radius: 0.8em;
   -moz-border-radius: 0.8em;

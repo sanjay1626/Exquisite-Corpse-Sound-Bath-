@@ -1,0 +1,22 @@
+tone-play-toggle {
+    margin-bottom: 10px;
+}
+
+#tracks {
+    position: relative;
+    width: calc(100% - 10px);
+    margin-left: 10px;
+}
+
+#progress {
+    width: 1px;
+    height: 100%;
+    left: 0%;
+    position: absolute;
+    background-color: black;
+}
+
+img {
+    width: 100%;
+    height: 200px;
+}
