@@ -34,7 +34,8 @@
   },
   "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "client-start": "react-scripts start"
   },
   "repository": {
     "type": "git",
