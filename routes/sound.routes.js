@@ -12,6 +12,15 @@ router.post('/api/sound', ({ body }, res) => {
     })
 });
 
+router.get('/api/sound', (req, res) => {
+    Sound.find({})
+    .then(dbSound => {
+        res.json(dbSound);
+    })
+    .catch(err => {
+        res.status(400).json(err);
+    })
+})
 
 
 module.exports = router;

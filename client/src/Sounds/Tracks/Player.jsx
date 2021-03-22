@@ -7,6 +7,7 @@ const Player = () => {
     const stopButton = useRef(null);
     const loadSounds = useRef(null);
 
+
     //universal variables
     let layer1, layer2, layer3, toggle, player;
 
@@ -17,7 +18,6 @@ const Player = () => {
         layer2.start();
         layer3.start();
         console.log("*** In startPlay");
-        // player.start();
         loadSounds.current.classList.add('hidden');
         startButton.current.classList.add('hidden');
         stopButton.current.classList.remove('hidden');
@@ -29,7 +29,6 @@ const Player = () => {
         layer2.stop();
         layer3.stop();
         console.log("*** In stopPlay");
-        // player.stop();
         loadSounds.current.classList.remove('hidden');
         stopButton.current.classList.add('hidden');
         startButton.current.classList.remove('hidden');
@@ -40,15 +39,6 @@ const Player = () => {
         e.preventDefault();
         stopButton.current.classList.add('hidden');
         startButton.current.classList.add('hidden');
-        //------------------------------------------TRANSPORT CODE ----------------------------------------//
-        // toggle = Tone.Transport;
-        // // set the transport
-        // toggle.bpm.value = 108;
-        // toggle.loop = true;
-        // toggle.loopStart = "4m";
-        // toggle.loopEnd = "8m";
-        //------------------------------------------TRANSPORT CODE ----------------------------------------//
-
 
         //Randomly grab 3 URLs from the database and use them in the players
         //temporary array to represent database for now
@@ -64,7 +54,8 @@ const Player = () => {
             "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1616280782/hqkxjma7mmjay9cfqeep.mp3",
             "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1616280784/p1ftjiiqnxcppjfmvsbb.mp3",
             "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1616281248/itgbbwye7eckeqki7pln.mp3",
-            "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1616281249/s7wtlmgd3by2mbzmptyj.mp3"
+            "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1616281249/s7wtlmgd3by2mbzmptyj.mp3",
+            "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1616392270/jsgjvi5njgcrpdqoy0az.mp3"
         ]
 
         //function variables to hold sound URLS
@@ -97,22 +88,6 @@ const Player = () => {
         console.log("Sound2 is: " + sound2);
         console.log("Sound3 is: " + sound3);
 
-
-        // layer1 = new Tone.Player({
-        //     url: sound1,
-        //     loop: true
-        // }).toDestination();
-        // // .sync().start(0)
-        // layer2 = new Tone.Player({
-        //     url: sound2,
-        //     loop: true
-        // }).toDestination();
-        // // .sync().start("2n")
-        // layer3 = new Tone.Player({
-        //     url: sound3,
-        //     loop: true
-        // }).toDestination();
-        // // .sync().start("3:3", "4n")
 
 
         const bufferPlayers = new Tone.ToneAudioBuffers({
@@ -158,6 +133,7 @@ const Player = () => {
                 <button ref={loadSounds} onClick={createPlayer}>Load Sounds</button>
                 <div slot="explanation">
                     <p>The player pulls three random sounds from the sample Database and syncs them to the start button.</p>
+                    <p>Press "Load Sounds" and when the buffer completes a start button will appear.</p>
                 </div>
                 {/* {createPlayer()} */}
                 <div id="content">
