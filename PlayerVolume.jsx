@@ -1,18 +1,58 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import * as Tone from 'tone';
-import API from '../../../../api/utils/API';
+import db from '../../../../routes/sound.routes';
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Slider from '@material-ui/core/Slider';
+import VolumeDown from '@material-ui/icons/VolumeDown';
+import VolumeUp from '@material-ui/icons/VolumeUp';
+
+const useStyles = makeStyles({
+    root: {
+        width: 200,
+    },
+});
 
 const Player = () => {
+    console.log("database size: " + db.get);
 
     const startButton = useRef(null);
     const stopButton = useRef(null);
     const loadSounds = useRef(null);
+    const sliders = useRef(null);
 
-    const [sounds, setsounds] = useState([])
-
+    // const classes = useStyles();
+    const [value1, setValue1] = React.useState(30);
+    const [value2, setValue2] = React.useState(30);
+    const [value3, setValue3] = React.useState(30);
 
     //universal variables
-    let layer1, layer2, layer3, toggle, player;
+    let layer1, layer2, layer3, vol1, vol2, vol3;
+
+
+    const handleChange1 = (event, newValue1) => {
+        event.preventDefault();
+        setValue1(newValue1);
+        console.log("In handle value1 " + Math.floor(newValue1 / 10));
+        vol1 = new Tone.Volume(Math.floor(newValue1 / 10)).toDestination();
+        layer1.connect(vol1);
+    };
+    const handleChange2 = (event, newValue2) => {
+        event.preventDefault();
+        setValue2(newValue2);
+        console.log("In handle value2 " + Math.floor(newValue2 / 10));
+        vol2 = new Tone.Volume(Math.floor(newValue2 / 10)).toDestination();
+        layer2.connect(vol2);
+    };
+    const handleChange3 = (event, newValue3) => {
+        event.preventDefault();
+        setValue3(newValue3);
+        console.log("In handle value3 " + Math.floor(newValue3 / 10));
+        vol3 = new Tone.Volume(Math.floor(newValue3 / 10)).toDestination();
+        layer3.connect(vol3);
+    };
+
 
     // connect the UI with the components
     function startPlay(e) {
@@ -35,17 +75,18 @@ const Player = () => {
         loadSounds.current.classList.remove('hidden');
         stopButton.current.classList.add('hidden');
         startButton.current.classList.remove('hidden');
-
     }
 
     function createPlayer(e) {
         e.preventDefault();
         stopButton.current.classList.add('hidden');
         startButton.current.classList.add('hidden');
+        sliders.current.classList.add("hidden");
+
 
         //Randomly grab 3 URLs from the database and use them in the players
         //temporary array to represent database for now
-        //==================CALL TO DB WILL GO HERE (replace the dbArray)======================//
+        //==================ARRAY STAND-IN FOR DB======================//
         let dbArray = [
             "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1615663107/InkyBoisSound_r0gdgd.mp3",
             "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1616265722/autrfo5tdnhh35q0lh4l.wav",
@@ -56,9 +97,9 @@ const Player = () => {
             "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1616280782/hqkxjma7mmjay9cfqeep.mp3",
             "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1616280784/p1ftjiiqnxcppjfmvsbb.mp3",
             "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1616281248/itgbbwye7eckeqki7pln.mp3",
-            "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1616281249/s7wtlmgd3by2mbzmptyj.mp3",
-            "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1616392270/jsgjvi5njgcrpdqoy0az.mp3"
+            "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1616281249/s7wtlmgd3by2mbzmptyj.mp3"
         ]
+
 
         //function variables to hold sound URLS
         let sound1, sound2, sound3;
@@ -66,16 +107,7 @@ const Player = () => {
         //need to know size of database
         let dbSize = dbArray.length;
 
-        API.getSounds()
-            .then(res =>
-                setSounds(res)
-            )
-            .catch(err => console.log(err));
-
-        console.log(sounds)
-
         //randonly pull three indexes from database
-        //gnerate random number
         function generateIndexes() {
             let ind1 = Math.floor(Math.random() * dbSize);
             let ind2 = Math.floor(Math.random() * dbSize);
@@ -93,13 +125,12 @@ const Player = () => {
             }
         }
 
+        //initial call to the function to load the sounds into the players
         generateIndexes()
 
         console.log("Sound1 is: " + sound1);
         console.log("Sound2 is: " + sound2);
         console.log("Sound3 is: " + sound3);
-
-
 
         const bufferPlayers = new Tone.ToneAudioBuffers({
             A1: sound1,
@@ -107,19 +138,25 @@ const Player = () => {
             A3: sound3,
         }, () => {
 
-            layer1 = new Tone.Player({ loop: true }).toDestination();
-            layer2 = new Tone.Player({ loop: true }).toDestination();
-            layer3 = new Tone.Player({ loop: true }).toDestination();
+            layer1 = new Tone.Player({ loop: true });
+            //.toDestination()
+            layer2 = new Tone.Player({ loop: true });
+            //.toDestination()
+            layer3 = new Tone.Player({ loop: true });
+            //.toDestination()
 
             // play all of the samples when they all load
             layer1.buffer = bufferPlayers.get("A1");
             layer2.buffer = bufferPlayers.get("A2");
             layer3.buffer = bufferPlayers.get("A3");
 
+
+
             console.log("Start button ");
             // console.log("Start button " + startButton);
             startButton.current.classList.remove("hidden");
             startButton.current.textContent = "Start";
+            sliders.current.classList.remove("hidden");
         });
 
 
@@ -144,7 +181,6 @@ const Player = () => {
                 <button ref={loadSounds} onClick={createPlayer}>Load Sounds</button>
                 <div slot="explanation">
                     <p>The player pulls three random sounds from the sample Database and syncs them to the start button.</p>
-                    <p>Press "Load Sounds" and when the buffer completes a start button will appear.</p>
                 </div>
                 {/* {createPlayer()} */}
                 <div id="content">
@@ -158,6 +194,57 @@ const Player = () => {
                         <button ref={stopButton} className="hidden" onClick={stopPlay}>Stop</button>
                     </div>
 
+                    <div ref={sliders} className="hidden">
+
+                        <Typography id="continuous-slider" gutterBottom>
+                            Layer 1
+                        </Typography>
+
+                        <Grid container spacing={2}>
+                            <Grid item>
+                                <VolumeDown />
+                            </Grid>
+                            <Grid item xs>
+                                <Slider value={value1} onChange={handleChange1} aria-labelledby="continuous-slider" />
+                            </Grid>
+                            <Grid item>
+                                <VolumeUp />
+                            </Grid>
+                        </Grid>
+
+                        <Typography id="continuous-slider" gutterBottom>
+                            Layer 2
+                        </Typography>
+
+                        <Grid container spacing={2}>
+                            <Grid item>
+                                <VolumeDown />
+                            </Grid>
+                            <Grid item xs>
+                                <Slider value={value2} onChange={handleChange2} aria-labelledby="continuous-slider" />
+                            </Grid>
+                            <Grid item>
+                                <VolumeUp />
+                            </Grid>
+                        </Grid>
+
+                        <Typography id="continuous-slider" gutterBottom>
+                            Layer 3
+                        </Typography>
+
+                        <Grid container spacing={2}>
+                            <Grid item>
+                                <VolumeDown />
+                            </Grid>
+                            <Grid item xs>
+                                <Slider value={value3} onChange={handleChange3} aria-labelledby="continuous-slider" />
+                            </Grid>
+                            <Grid item>
+                                <VolumeUp />
+                            </Grid>
+                        </Grid>
+
+                    </div>
 
                     {/* <div id="tracks">
                         <div id="progress"></div>

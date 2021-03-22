@@ -15,7 +15,10 @@ const urlSeed = [{
     {
         username: "admin",
         URL: "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1616265722/autrfo5tdnhh35q0lh4l.wav",
-
+    },
+    {
+        username: "admin",
+        URL: "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1615661248/my-audio-file-name_3_wtyhca.webm"
     },
     {
         username: "admin",
@@ -31,6 +34,10 @@ const urlSeed = [{
     },
     {
         username: "admin",
+        URL: "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1616280782/hqkxjma7mmjay9cfqeep.mp3"
+    },
+    {
+        username: "admin",
         URL: "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1616280784/p1ftjiiqnxcppjfmvsbb.mp3"
     },
     {
@@ -41,6 +48,11 @@ const urlSeed = [{
         username: "admin",
         URL: "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1616281249/s7wtlmgd3by2mbzmptyj.mp3"
     },
+    {
+        username: "admin",
+        URL: "https://res.cloudinary.com/exquisite-corpse-sound-bath/video/upload/v1616392270/jsgjvi5njgcrpdqoy0az.mp3"
+    },
+
 
 ];
 
