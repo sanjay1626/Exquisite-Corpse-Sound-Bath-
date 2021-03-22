@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -8,12 +8,12 @@ import { PrivateRoute } from '../_components';
 import { HomePage } from '../HomePage';
 import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
-
+import { Record } from '../Record'
 
 class App extends React.Component {
     constructor(props) {
         super(props);
-
+       
         history.listen((location, action) => {
             // clear alert on location change
             this.props.clearAlerts();
@@ -35,7 +35,7 @@ class App extends React.Component {
                       <PrivateRoute exact path="/" component={HomePage} />
                       <Route path="/login" component={LoginPage} />
                       <Route path="/register" component={RegisterPage} />
-                   
+                      <Route path="/record" component={Record}/>
                       <Redirect from="*" to="/" />
                     </Switch>
                   </div>

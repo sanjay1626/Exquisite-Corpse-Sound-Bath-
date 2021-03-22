@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { userActions } from "../_actions";
+
 import axios from "axios";
 class HomePage extends Component {
   constructor(props) {
@@ -97,24 +98,68 @@ class HomePage extends Component {
     console.warn(this.state);
     return (
       <div>
-          
-         <div className="sidenav">
-             <label>Exquisite Corpse Sound Bath</label>
-             <h2 className="nav-title"> Discover</h2>
-             <a href="#"><i class="fas fa-fire"></i> Featured</a>
-  <a href="#"><i class="fas fa-music"></i> Music</a>
-  <a href="#"><i class="fas fa-microphone"></i> Record</a>
-  <a href="#"><i class="fas fa-search"></i> Search</a>
-         </div>
-
+        <div className="sidenav">
+          <label>Exquisite Corpse Sound Bath</label>
+          <h2 className="nav-title"> Discover</h2>
+          <a href="#">
+            <i class="fas fa-fire"></i> Featured
+          </a>
+          <a href="#">
+            <i class="fas fa-music"></i> Music
+          </a>
+           <Link to="/record" ><i class="fas fa-microphone"></i> Record
+          </Link> 
+          <a href="#">
+            <i class="fas fa-search"></i> Search
+          </a>
+          <br></br>
+          <br></br>
+          <button className="btn btn-dark">Signout</button>
+        </div>
+        
+    
         <div className="col-md-12">
           <h1>Hi {user.firstName}!</h1>
-
-          <div class="d-grid gap-5 d-md-block">
-            <button class="btn btn-primary" type="button">
-              Record
-            </button>
+          <div className="container">
+        <div id="myCarousel" className="carousel slide" data-ride="carousel">
+          {/* Wrapper for slides */}
+          <div className="carousel-inner">
+            <div className="item active">
+              <img src="http://placehold.it/760x400/cccccc/ffffff" />
+            
+            </div>{/* End Item */}
+            <div className="item">
+              <img src="http://placehold.it/760x400/999999/cccccc" />
+             
+            </div>{/* End Item */}
+            <div className="item">
+              <img src="http://placehold.it/760x400/dddddd/333333" />
+              
+            </div>{/* End Item */}
+            <div className="item">
+              <img src="http://placehold.it/760x400/999999/cccccc" />
+              
+            </div>{/* End Item */}
+            <div className="item">
+              <img src="http://placehold.it/760x400/dddddd/333333" />
+              
+            </div>{/* End Item */}
+          </div>{/* End Carousel Inner */}
+         
+          {/* Controls */}
+          <div className="carousel-controls">
+            <a className="left carousel-control" href="#myCarousel" data-slide="prev">
+              <span className="glyphicon glyphicon-chevron-left" />
+            </a>
+            <a className="right carousel-control" href="#myCarousel" data-slide="next">
+              <span className="glyphicon glyphicon-chevron-right" />
+            </a>
           </div>
+        </div>{/* End Carousel */}
+      </div>
+    
+          
+          
 
           <hr></hr>
 
@@ -148,9 +193,8 @@ class HomePage extends Component {
 
           <p>
             <Link to="/login">Logout</Link>
-            
           </p>
-        
+
           {/* <h3>All registered users:</h3> */}
           {/* {users.loading && <em>Loading users...</em>} */}
           {/* {users.error && <span className="text-danger">ERROR: {users.error}</span>} */}
@@ -168,18 +212,23 @@ class HomePage extends Component {
           {/* // )} */}
           {/* </ul> */}
           {/* // } */}
-         
         </div>
-      <footer className="footer">
-      
-    <ul>
-        <li><i className="fa fa-facebook fa-2x"></i></li>
-        <li><i className="fa fa-twitter fa-2x"></i></li>
-        <li><i className="fa fa-linkedin fa-2x"></i></li>
-        <li><i className="fa fa-instagram fa-2x"></i></li>
-    </ul>
-
-      </footer>
+        <footer className="footer">
+          <ul>
+            <li>
+              <i className="fa fa-facebook fa-2x"></i>
+            </li>
+            <li>
+              <i className="fa fa-twitter fa-2x"></i>
+            </li>
+            <li>
+              <i className="fa fa-linkedin fa-2x"></i>
+            </li>
+            <li>
+              <i className="fa fa-instagram fa-2x"></i>
+            </li>
+          </ul>
+        </footer>
       </div> //master div
     );
   }
