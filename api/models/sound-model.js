@@ -15,6 +15,6 @@ const soundSchema = new Schema (
 
 
 // Store model in variable Sound.
-const Sound = mongoose.model('sound', soundSchema);
+const Sound = mongoose.model("sound", soundSchema);
 
 module.exports = Sound;

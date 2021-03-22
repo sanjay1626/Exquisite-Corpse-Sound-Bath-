@@ -14,7 +14,7 @@ router.post('/api/sound', ({ body }, res) => {
 
 // Create GET /api/sound route
 router.get('/api/sound', (req, res) => {
-    console.log(req);
+    console.log(res);
     Sound.find({})
     .then(dbSound => {
         res.json(dbSound);

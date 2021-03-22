@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-
-const db = require('./controllers/db/database');
+const mongoose = require('mongoose');
 
 
 const app = express();
@@ -11,10 +10,18 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.json());
 
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/funkySound', {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+    
+});
+
 const SoundRoute = require('./routes/sound.routes.js');
 app.use(SoundRoute);
 
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
 
 
 app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))
