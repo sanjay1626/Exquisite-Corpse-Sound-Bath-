@@ -114,7 +114,7 @@ class HomePage extends Component {
           </a>
           <br></br>
           <br></br>
-          <button className="btn btn-dark">Signout</button>
+          <Link to="/login"><button className="btn btn-dark">Signout</button></Link> 
         </div>
         
     
@@ -198,9 +198,6 @@ class HomePage extends Component {
 
           <hr></hr>
 
-          <p>
-            <Link to="/login">Logout</Link>
-          </p>
 
           {/* <h3>All registered users:</h3> */}
           {/* {users.loading && <em>Loading users...</em>} */}

@@ -25,7 +25,7 @@ const Visuals = () => {
 
   const draw = (p5) => {
     p5.background(0);
-    
+    p5.noFill();
     p5.blendMode(p5.BLEND);
     
 

@@ -37,7 +37,7 @@ class Record extends Component  {
         const { user, users } = this.props;
        
         return(
-            <div>
+            <div id="record">
 
 
         <div className="sidenav">
@@ -56,7 +56,7 @@ class Record extends Component  {
               </a>
           <br></br>
           <br></br>
-          <button className="btn btn-dark">Signout</button>
+        <Link to ="/logout"><button className="btn btn-dark">Back</button></Link>  
         </div>
 
 

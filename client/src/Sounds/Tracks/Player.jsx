@@ -147,7 +147,7 @@ const Player = () => {
         <div>
             <div id='tone-example' label="ECSB">
                 <div id='tone-loader'></div>
-                <button ref={loadSounds} onClick={createPlayer}>Load Sounds</button>
+                <button className="btn btn-dark" ref={loadSounds} onClick={createPlayer}>Load Sounds</button>
                 <div slot="explanation">
                     <p>The player pulls three random sounds from the sample Database and syncs them to the start button.</p>
                     <p>Press "Load Sounds" and when the buffer completes a start button will appear.</p>
