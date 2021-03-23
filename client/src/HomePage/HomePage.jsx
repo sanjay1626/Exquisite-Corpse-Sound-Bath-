@@ -126,26 +126,26 @@ class HomePage extends Component {
           {/* Wrapper for slides */}
           <div className="carousel-inner">
             <div className="item active">
-              <img src="https://www.cifras.com.br/arquivos/artistas/l/led_zeppelin_02_big.jpg" /> 
+              <img src="http://www.functionalstone.com/cv/images/exquisite-corpse(31).jpg" /> 
               <div class="carousel-caption">
                 <h4><a href="#">Lorem ipsum dolor sit amet consetetur sadipscing</a></h4>
                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
             </div>
             </div>{/* End Item */}
             <div className="item">
-              <img src="https://jazzdesk.files.wordpress.com/2019/11/ron_carter_danny_simmons_brown_beatnik_tomes.jpg" />
+              <img src="https://www.functionalstone.com/cv/images/exquisite-corpse(29).jpg" />
              
             </div>{/* End Item */}
             <div className="item">
-              <img src="https://floridatheatre.showare.com/uplimage/TicketBanner-CALZeppelinII.JPG" />
+              <img src="https://s3files.core77.com/blog/images/2011/10/XavierBarrade-EpicExquisiteCorpse-2.jpg" />
               
             </div>{/* End Item */}
             <div className="item">
-              <img src="http://hardrockhaven.net/online/wp-content/uploads/2020/10/Wildness.jpg" />
+              <img src="http://www.functionalstone.com/cv/images/exquisite-corpse-game(36).jpg" />
               
             </div>{/* End Item */}
             <div className="item">
-              <img src="https://www.cifras.com.br/arquivos/artistas/b/black_sabbath_2013_02_big.jpg" />
+              <img src="https://i.pinimg.com/736x/30/32/32/3032325f3dbd6287abdd7dccd3888d81--exquisite-corpse-future-school.jpg" />
               
             </div>{/* End Item */}
             

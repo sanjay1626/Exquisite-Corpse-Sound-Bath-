@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { userActions } from "../_actions";
 import Player from "../Sounds/Tracks/Player"
+import Visuals from "../Visuals/Visuals"
 
 
 class Record extends Component {
   render() {
     const { user, users } = this.props;
-    console.log("PLayer " + Player)
 
     return (
-      <div>
+      <div className="outerDiv col-12">
 
 
         <div className="sidenav">
@@ -37,6 +37,10 @@ class Record extends Component {
         <div className="Player">
           <Player />
         </div>
+        <div className="Visuals">
+          <Visuals />
+        </div>
+
 
 
       </div>
