@@ -1,2 +1,2 @@
 export * from './Record';
-export * from 'react'
+export * from 'react-mic'
