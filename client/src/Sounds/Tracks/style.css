@@ -21,6 +21,15 @@ img {
     height: 200px;
 }
 
+p {
+    color:rgb(93, 206, 206);
+}
+
+button {
+    background-color:slategray ;
+    color:lightgray;
+}
+
 .hidden {
     display:none;
 }
