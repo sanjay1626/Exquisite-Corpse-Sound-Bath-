@@ -7,22 +7,30 @@ import { userActions } from "../_actions";
 class Record extends Component  {
     render (){
         const { user, users } = this.props;
+      
+
         return(
             <div className='jumbotron'>
                 <h1> Record Page</h1>
+
+            
+
+
+
+
 <div className="sidenav">
               <label>Exquisite Corpse Sound Bath</label>
               <h2 className="nav-title"> Discover</h2>
               <a href="#">
-                <i class="fas fa-fire"></i> Featured
+                <i className="fas fa-fire"></i> Featured
               </a>
               <a href="#">
-                <i class="fas fa-music"></i> Music
+                <i className="fas fa-music"></i> Music
               </a>
                <Link to="/record" ><i class="fas fa-microphone"></i> Record
               </Link> 
               <a href="#">
-                <i class="fas fa-search"></i> Search
+                <i className="fas fa-search"></i> Search
               </a>
               <br></br>
               <br></br>

@@ -26,7 +26,7 @@ class HomePage extends Component {
   //function to fetch
   fetchSearchResults(updatedPageNo = "", query) {
     const pageNumber = updatedPageNo ? `&page=${pageNumber}` : "";
-    const searchUrl = `https://pixabay.com/api/?key=12413278-79b713c7e196c7a3defb5330e&q=${query}${pageNumber}`;
+    const searchUrl = `https://shazam.p.rapidapi.com/search/?key=c84a11a37dmsh97101e52facfc63p160003jsna7983511d133&q=${query}${pageNumber}`;
     if (this.cancel) {
       this.cancel.cancel();
     }
@@ -118,32 +118,37 @@ class HomePage extends Component {
         </div>
         
     
-        <div className="col-md-12">
-          <h1>Hi {user.firstName}!</h1>
+        <div className="col-md-16">
+          {/* <h1>Hi {user.firstName}!</h1> */}
           <div className="container">
+            
         <div id="myCarousel" className="carousel slide" data-ride="carousel">
           {/* Wrapper for slides */}
           <div className="carousel-inner">
             <div className="item active">
-              <img src="http://placehold.it/760x400/cccccc/ffffff" />
-            
+              <img src="https://www.cifras.com.br/arquivos/artistas/l/led_zeppelin_02_big.jpg" /> 
+              <div class="carousel-caption">
+                <h4><a href="#">Lorem ipsum dolor sit amet consetetur sadipscing</a></h4>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. <a class="label label-primary" href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank">Free Bootstrap Carousel Collection</a></p>
+            </div>
             </div>{/* End Item */}
             <div className="item">
-              <img src="http://placehold.it/760x400/999999/cccccc" />
+              <img src="https://jazzdesk.files.wordpress.com/2019/11/ron_carter_danny_simmons_brown_beatnik_tomes.jpg" />
              
             </div>{/* End Item */}
             <div className="item">
-              <img src="http://placehold.it/760x400/dddddd/333333" />
+              <img src="https://floridatheatre.showare.com/uplimage/TicketBanner-CALZeppelinII.JPG" />
               
             </div>{/* End Item */}
             <div className="item">
-              <img src="http://placehold.it/760x400/999999/cccccc" />
+              <img src="http://hardrockhaven.net/online/wp-content/uploads/2020/10/Wildness.jpg" />
               
             </div>{/* End Item */}
             <div className="item">
-              <img src="http://placehold.it/760x400/dddddd/333333" />
+              <img src="https://www.cifras.com.br/arquivos/artistas/b/black_sabbath_2013_02_big.jpg" />
               
             </div>{/* End Item */}
+            
           </div>{/* End Carousel Inner */}
          
           {/* Controls */}
@@ -155,7 +160,9 @@ class HomePage extends Component {
               <span className="glyphicon glyphicon-chevron-right" />
             </a>
           </div>
+            
         </div>{/* End Carousel */}
+          
       </div>
     
           
