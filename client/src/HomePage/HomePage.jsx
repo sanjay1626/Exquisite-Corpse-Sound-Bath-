@@ -26,7 +26,7 @@ class HomePage extends Component {
   //function to fetch
   fetchSearchResults(updatedPageNo = "", query) {
     const pageNumber = updatedPageNo ? `&page=${pageNumber}` : "";
-    const searchUrl = `https://shazam.p.rapidapi.com/search/?key=c84a11a37dmsh97101e52facfc63p160003jsna7983511d133&q=${query}${pageNumber}`;
+    const searchUrl = `https://pixabay.com/api/?key=12413278-79b713c7e196c7a3defb5330e&q=${query}${pageNumber}`;
     if (this.cancel) {
       this.cancel.cancel();
     }

@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { userActions } from "../_actions";
 import Player from '../Sounds/Tracks/Player';
 import {ReactMic}  from 'react-mic'
-
+import Visuals from '../Visuals/Visuals'
 
 class Record extends Component  {
     constructor(props){
@@ -62,6 +62,10 @@ class Record extends Component  {
 
         <div className="Player">
             <Player />
+            <div className="Visuals">
+          <Visuals />
+        </div>
+
         <ReactMic record={this.state.record}
           className="sound-wave"
           onStop={this.onStop}
