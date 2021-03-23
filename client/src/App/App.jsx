@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -8,11 +8,12 @@ import { PrivateRoute } from '../_components';
 import { HomePage } from '../HomePage';
 import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
+import { Record } from '../Record'
 
 class App extends React.Component {
     constructor(props) {
         super(props);
-
+       
         history.listen((location, action) => {
             // clear alert on location change
             this.props.clearAlerts();
@@ -22,23 +23,27 @@ class App extends React.Component {
     render() {
         const { alert } = this.props;
         return (
-            <div className="jumbotron">
-                <div className="container">
-                    <div className="col-sm-8 col-sm-offset-2">
-                        {alert.message &&
-                            <div className={`alert ${alert.type}`}>{alert.message}</div>
-                        }
-                        <Router history={history}>
-                            <Switch>
-                                <PrivateRoute exact path="/" component={HomePage} />
-                                <Route path="/login" component={LoginPage} />
-                                <Route path="/register" component={RegisterPage} />
-                                <Redirect from="*" to="/" />
-                            </Switch>
-                        </Router>
-                    </div>
-                </div>
+          <div className="jumbotron">
+            <div className="container-fluid ">
+              <div className="col-sm-8 col-sm-offset-2 bg-transparent">
+                {alert.message && (
+                  <div className={`alert ${alert.type}`}>{alert.message}</div>
+                )}
+                <Router history={history}>
+                  <div>
+                    <Switch>
+                      <PrivateRoute exact path="/" component={HomePage} />
+                      <Route path="/login" component={LoginPage} />
+                      <Route path="/register" component={RegisterPage} />
+                      <Route path="/record" component={Record}/>
+                      <Redirect from="*" to="/" />
+                    </Switch>
+                  </div>
+                </Router>
+              </div>
             </div>
+                  
+          </div>
         );
     }
 }

@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
+  "proxy": "http://localhost:3001/",
   "dependencies": {
+    "axios": "^0.21.1",
     "history": "^4.10.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-mic": "^12.4.6",
     "react-redux": "^7.1.3",
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.4",
