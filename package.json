@@ -23,7 +23,8 @@
     "seed": "node scripts/seedDB.js",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "heroku-prebuild": "npm install --dev"
   },
   "repository": {
     "type": "git",
@@ -35,5 +36,5 @@
   "bugs": {
     "url": "https://github.com/sanjay1626/Exquisite-Corpse-Sound-Bath-/issues"
   },
-  "homepage": "https://github.com/sanjay1626/Exquisite-Corpse-Sound-Bath-#readme"
+  "homepage": "."
 }
