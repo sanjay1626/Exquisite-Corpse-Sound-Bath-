@@ -16,6 +16,7 @@
     "axios": "^0.21.1",
     "babel-loader": "^8.0.5",
     "cli-ux": "^5.5.1",
+    "config": "^3.3.6",
     "got": "^11.8.2",
     "history": "^4.10.1",
     "html-webpack-plugin": "^3.2.0",
@@ -34,12 +35,13 @@
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.2",
-    "webpack-merge": "^5.7.3"
+    "webpack-merge": "^5.7.3",
+    "webpack-pwa-manifest": "^4.3.0"
   },
-  "devDependencies": {},
   "scripts": {
+    "build": "webpack --config webpack.prod.js",
     "start": "webpack-dev-server --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "heroku-postbuild": "webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
