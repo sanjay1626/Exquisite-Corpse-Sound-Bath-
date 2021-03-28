@@ -19,7 +19,7 @@ class Record extends Component {
           <h2 className="nav-title"> Discover</h2>
           <a href="#">
             <i className="fas fa-fire"></i> Featured
-              </a>
+            </a>
           <a href="#">
             <i className="fas fa-music"></i> Music
               </a>
@@ -28,10 +28,13 @@ class Record extends Component {
           <a href="#">
             <i className="fas fa-search"></i> Search
               </a>
+          {/* <br></br>
           <br></br>
-          <br></br>
-          <button className="btn btn-dark">Signout</button>
+          <button className="btn btn-dark">Signout</button> */}
         </div>
+
+
+        
 
 
         <div className="Player">
@@ -41,7 +44,9 @@ class Record extends Component {
           <Visuals />
         </div>
 
-
+        <p>
+          <Link to="/login">Logout</Link>
+        </p>
 
       </div>
 

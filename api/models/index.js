@@ -1,3 +1,3 @@
 module.exports = {
-    Sound: require("./sound-model")
+    Sound: require("../models/sound-models")
 };

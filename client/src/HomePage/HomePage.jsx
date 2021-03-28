@@ -112,9 +112,9 @@ class HomePage extends Component {
           <a href="#">
             <i class="fas fa-search"></i> Search
           </a>
+          {/* <br></br>
           <br></br>
-          <br></br>
-          <button className="btn btn-dark">Signout</button>
+          <button className="btn btn-dark">Signout</button> */}
         </div>
         
     
