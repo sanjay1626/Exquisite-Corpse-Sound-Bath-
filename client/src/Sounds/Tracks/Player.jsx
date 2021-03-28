@@ -149,9 +149,8 @@ const Player = () => {
                 <div id='tone-loader'></div>
                 <button ref={loadSounds} onClick={createPlayer}>Load Sounds</button>
                 <div slot="explanation">
-                    <p>The player pulls three random sounds from the sample Database and syncs them to the start button.<br/>Each time you click on load sounds it will pull three new sounds.</p>
-                    <p>Press "Load Sounds" and when the buffer completes a start button will appear.<br/>
-                    (This could take a little while, please be patient and slowly count to at least 10)</p>
+                    <p>The player pulls three random sounds from the sample Database and syncs them to the start button.</p>
+                    <p>Press "Load Sounds" and when the buffer completes a start button will appear.</p>
                 </div>
                 {/* {createPlayer()} */}
                 <div id="content">
