@@ -15,7 +15,8 @@
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.4",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "webpack": "^5.38.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
@@ -25,12 +26,13 @@
     "gh-pages": "^3.2.0",
     "html-webpack-plugin": "^3.2.0",
     "path": "^0.12.7",
+    "webpack-cli": "^4.7.0",
     "webpack-dev-server": "^3.11.2"
   },
   "scripts": {
-    "build": "react-scripts start",
+    "build": "webpack --config webpack.prod.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "webpack-dev-server --open"
+    "start": "webpack serve --open --config webpack.dev.js"
   }
 }
