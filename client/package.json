@@ -22,12 +22,15 @@
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
+    "gh-pages": "^3.2.0",
     "html-webpack-plugin": "^3.2.0",
     "path": "^0.12.7",
     "webpack-dev-server": "^3.11.2"
   },
   "scripts": {
-    "build": "webpack --mode production",
+    "build": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "webpack-dev-server --open"
   }
 }
