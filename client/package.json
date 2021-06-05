@@ -1,4 +1,5 @@
 {
+  "homepage": "https://sanjay1626.github.io/Exquisite-Corpse-Sound-Bath-/",
   "name": "exquisite-corpse-sound-bath-",
   "version": "1.0.0",
   "description": "",
@@ -23,22 +24,10 @@
     "babel-loader": "^8.0.5",
     "html-webpack-plugin": "^3.2.0",
     "path": "^0.12.7",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.11.2"
   },
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack-dev-server --open"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sanjay1626/Exquisite-Corpse-Sound-Bath-.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sanjay1626/Exquisite-Corpse-Sound-Bath-/issues"
-  },
-  "homepage": "https://github.com/sanjay1626/Exquisite-Corpse-Sound-Bath-#readme"
+  }
 }
